@@ -1,0 +1,12 @@
+<p><%= flash[:success] %></p>
+
+<h3>Submitted Information</h3>
+<p>Name: <%= @person.name %></p>
+<p>Dojo Location: <%= @person.location %></p>
+<p>Favorite Language: <%= @person.language %></p>
+<p>Comment: <%= @person.comment %></p>
+<!-- <form action="/surveys/back" method="post"> -->
+<p>
+<!-- <input type="submit" value="Go Back"> -->
+<%= link_to 'Back', :back %>
+</p>

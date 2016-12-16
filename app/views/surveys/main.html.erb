@@ -1,0 +1,29 @@
+<% if flash[:errors] %>
+	<% flash[:errors].each do |e| %>
+		<p><%= e %></p>
+	<% end %>		
+<% end %>
+
+<form action="/surveys" method="post">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<p><label>Your Name:</label>
+	<input type="text" name="survey[name]"></p>
+	<p><label>Dojo Location:</label>
+	<select name="survey[location]">
+		<option value="mountain_view">Mountain View</option>
+		<option value="sunnyvale">Sunnyvale</option>
+		<option value="gotham">Gotham City</option>
+		<option value="hogsmeade">Hogsmeade</option>
+		<option value="capitol">The Capitol</option>
+	</select></p>
+	<p><label>Favorite Language:</label>
+	<select name="survey[language]">
+		<option value="php">PHP</option>
+		<option value="javascript">Javascript</option>
+		<option value="ruby">Ruby</option>
+		<option value="python">Python</option>
+	</select></p>
+	<p><label>Comment (optional):  </label></p>
+	<textarea name="survey[comment]" rows="5" cols="40"></textarea>
+	<p><input type="submit" value="Submit"></p>
+</form>
